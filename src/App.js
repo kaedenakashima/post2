@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.css'
+import { BrowserRouter } from 'react-router-dom'
+import Blog from './containers/Blog/Blog'
+import WebFont from 'webfontloader';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+WebFont.load({
+  google: {
+    families: ['Montserrat :200, 400, 600, 800', 'Raleway :100, 400, 600, 800', 'Amiri: 400'],
+  },
+});
+
+class App extends Component {
+  render() {
+    return (
+      //<BrowserRouter basename='/my-app'>
+      <BrowserRouter>
+        <div className="App" >
+          <Blog />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
